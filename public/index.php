@@ -1,11 +1,13 @@
 <?php
-
+ini_set("display_errors",1);
+ini_set("display_startup_errors",1);
+ini_set("error_reporting",E_ALL);
 session_start();
 
-$path = $_SERVER['SERVER_NAME'] . "://" . $_SERVER['SERVER_NAME']  .  $_SERVER['PHP_SELF'];
+$path = $_SERVER['REQUEST_URI'] . "://" . $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'];
 $path = str_replace("index.php", "", $path);
-define('ROOT',$path);
-define('ASSETS',$path);
+define('ROOT', $path);
+define('ASSETS', $path . 'assets/');
 include '../app/init.php';
-show($_SERVER);
+
 $app = new App();

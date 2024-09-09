@@ -14,14 +14,14 @@
 	<link href="../../../public/assets/css/main.css" rel="stylesheet">
 	<link href="../../../public/assets/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+    <script src="../../../public/assets/js/html5shiv.js"></script>
+    <script src="../../../public/assets/js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../../../public/assets/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../../public/assets/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../../public/assets/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../../public/assets/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../../../public/assets/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
 <body>
@@ -57,7 +57,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.php"><img src="images/home/logo.png" alt="" /></a>
+							<a href="index.php"><img src="../../../public/assets/images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
@@ -128,7 +128,7 @@
 										<li><a href="blog-single.html">Blog Single</a></li>
                                     </ul>
                                 </li> 
-								<li><a href="404.html">404</a></li>
+								<li><a href="404.php">404</a></li>
 								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>
@@ -280,7 +280,7 @@
 						</div><!--/price-range-->
 						
 						<div class="shipping text-center"><!--shipping-->
-							<img src="images/home/shipping.jpg" alt="" />
+							<img src="../../../public/assets/images/home/shipping.jpg" alt="" />
 						</div><!--/shipping-->
 					</div>
 				</div>
@@ -304,7 +304,7 @@
 								</span>
 							</div>
 							<a href="">
-								<img src="images/blog/blog-one.jpg" alt="">
+								<img src="../../../public/assets/images/blog/blog-one.jpg" alt="">
 							</a>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 							<a  class="btn btn-primary" href="">Read More</a>
@@ -326,7 +326,7 @@
 								</span>
 							</div>
 							<a href="">
-								<img src="images/blog/blog-two.jpg" alt="">
+								<img src="../../../public/assets/images/blog/blog-two.jpg" alt="">
 							</a>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 							<a  class="btn btn-primary" href="">Read More</a>
@@ -348,7 +348,7 @@
 								</span>
 							</div>
 							<a href="">
-								<img src="images/blog/blog-three.jpg" alt="">
+								<img src="../../../public/assets/images/blog/blog-three.jpg" alt="">
 							</a>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 							<a  class="btn btn-primary" href="">Read More</a>
@@ -382,7 +382,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="images/home/iframe1.png" alt="" />
+										<img src="../../../public/assets/images/home/iframe1.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -397,7 +397,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="images/home/iframe2.png" alt="" />
+										<img src="../../../public/assets/images/home/iframe2.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -412,7 +412,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="images/home/iframe3.png" alt="" />
+										<img src="../../../public/assets/images/home/iframe3.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -427,7 +427,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="images/home/iframe4.png" alt="" />
+										<img src="../../../public/assets/images/home/iframe4.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -440,7 +440,7 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="address">
-							<img src="images/home/map.png" alt="" />
+							<img src="../../../public/assets/images/home/map.png" alt="" />
 							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
 						</div>
 					</div>
@@ -527,11 +527,11 @@
 	
 
   
-    <script src="js/jquery.js"></script>
-	<script src="js/price-range.js"></script>
-	<script src="js/jquery.scrollUp.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../../../public/assets/js/jquery.js"></script>
+	<script src="../../../public/assets/js/price-range.js"></script>
+	<script src="../../../public/assets/js/jquery.scrollUp.min.js"></script>
+	<script src="../../../public/assets/js/bootstrap.min.js"></script>
+    <script src="../../../public/assets/js/jquery.prettyPhoto.js"></script>
+    <script src="../../../public/assets/js/main.js"></script>
 </body>
 </html>
