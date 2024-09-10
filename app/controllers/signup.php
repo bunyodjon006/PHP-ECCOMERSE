@@ -6,8 +6,9 @@ class SignUp extends Controller
     {
         $data['page_title'] = "SignUp";
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            show($_POST);
-            $User = $this->load_model("User");
+
+            $user = $this->load_model("User");
+            $user->signup($_POST);
         }
         $this->view("sign", $data);
     }

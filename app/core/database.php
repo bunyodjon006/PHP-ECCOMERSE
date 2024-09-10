@@ -2,7 +2,7 @@
 
 class Database
 {
-    public static $con;
+    public static PDO $con;
 
     public function __construct()
     {
@@ -19,15 +19,33 @@ class Database
         if (self::$con) {
             return self::$con;
         }
-        return $a = new self();
+        return $instance = new self();
     }
 
-    public function read()
+    public function read($query, $data = array()): bool|array
     {
+        $stm = self::$con->prepare($query);
+        $result = $stm->execute($data);
+        if ($result) {
+            $data = $stm->fetchAll(PDO::FETCH_OBJ);
+            if (is_array($data)) {
+                return $data;
+            }
+        }
+        return false;
     }
 
-    public function write()
+    public function write($query, $data = array()): bool|array
     {
+        $stm = self::$con->prepare($query);
+        $result = $stm->execute($data);
+        if ($result) {
+            $data = $stm->fetchAll(PDO::FETCH_OBJ);
+            if (is_array($data)) {
+                return $data;
+            }
+        }
+        return false;
     }
 
 }
