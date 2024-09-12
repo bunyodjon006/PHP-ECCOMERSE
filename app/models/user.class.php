@@ -39,6 +39,7 @@ class User
         if (is_array($check)) {
             $this->error .= "That email is already in use";
         }
+       
 
         $data['url_addrees'] = $this->get_random_string_max(60);
         $arr = [];
@@ -70,13 +71,13 @@ class User
 
     public function login($POST)
     {
-        show($POST);
+
         $data = array();
         $db = Database::getInstance();
-        $data['email'] = isset($POST['email']) ? trim($POST['email']):'';
+        $data['email'] = isset($POST['email']) ? trim($POST['email']) : '';
         $data['password'] = isset($POST['password']) ? trim($POST['password']) : '';
 
-         // Validate email
+        // Validate email
         if (empty($data['email']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
             $this->error .= "Please enter a valid email address <br>";
         }
@@ -96,13 +97,20 @@ class User
 
             //url_addrees	
             // Prepare the SQL query
-            $sql = "SELECT * FROM user WHERE email = :email && password = :password LIMIT 1";
-            $result = $db->read($sql, $data);
+            $sql = "SELECT * FROM user WHERE email = :email AND password = :password LIMIT 1";
+            $params = [
+                'email' => $data['email'],
+                'password' => $data['password'],
+            ];
+            $result = $db->read($sql, $params);
+
+
             if (is_array($result)) {
-                $_SESSION['user_url'] = $result[0]->url_addrees;
+                $_SESSION['user_url'] = $result[0]['url_addrees'];
                 header("Location: " . ROOT . "home");
-            };
-            $this->error .="Wrong email and password <br>";
+            } else {
+                $this->error .= "Wrong email and password <br>";
+            }
         }
         $_SESSION['error'] = $this->error;
     }
@@ -120,4 +128,14 @@ class User
         }
         return $text;
     }
+    // function check_login()
+    // {
+    //     if (isset($_SESSION['user_url'])) {
+    //         $arr['url'] = $_SESSION['user_url'];
+    //         $query = "SELECT * FROM user WHERE url_addrees = :url_addrees LIMIT 1";
+    //         $db = Database::getInstance();
+    //         $result = $db->read($query, $arr);
+    //     } 
+    //     return false;
+    // }
 }
