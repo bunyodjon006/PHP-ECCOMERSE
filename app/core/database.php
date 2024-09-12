@@ -2,51 +2,45 @@
 
 class Database
 {
-    public static PDO $con;
+    private static $instance = null;
+    private $connection;
 
-    public function __construct()
+    private function __construct()
     {
         try {
-            $string = DB_TYPE . ":host=" . DB_HOST . ";dbname=" . DB_NAME;
-            self::$con = new PDO($string, DB_USER, DB_PASS);
-        } catch (PDOException  $e) {
-            die($e->getMessage());
+            $this->connection = new PDO("mysql:host=localhost;dbname=users", "root", "");
+            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            die("Connection failed: " . $e->getMessage());
         }
     }
 
     public static function getInstance()
     {
-        if (self::$con) {
-            return self::$con;
+        if (self::$instance == null) {
+            self::$instance = new Database();
         }
-        return $instance = new self();
+        return self::$instance;
     }
 
-    public function read($query, $data = array()): bool|array
+    // INSERT, UPDATE, DELETE uchun write metodi
+    public function write($query, $data = [])
     {
-        $stm = self::$con->prepare($query);
-        $result = $stm->execute($data);
-        if ($result) {
-            $data = $stm->fetchAll(PDO::FETCH_OBJ);
-            if (is_array($data)) {
-                return $data;
-            }
+        $statement = $this->connection->prepare($query);
+        $result = $statement->execute($data);
+        return $result; // true yoki false qaytaradi
+    }
+
+    // SELECT so'rovlari uchun read metodi
+    public function read($query, $data = [])
+    {
+        $statement = $this->connection->prepare($query);
+        $statement->execute($data);
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        if (is_array($result) && count($result) > 0) {
+            return $result;
         }
         return false;
     }
-
-    public function write($query, $data = array()): bool|array
-    {
-        $stm = self::$con->prepare($query);
-        $result = $stm->execute($data);
-        if ($result) {
-            $data = $stm->fetchAll(PDO::FETCH_OBJ);
-            if (is_array($data)) {
-                return $data;
-            }
-        }
-        return false;
-    }
-
 }
-

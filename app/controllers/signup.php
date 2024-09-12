@@ -12,5 +12,4 @@ class SignUp extends Controller
         }
         $this->view("sign", $data);
     }
-
 }
