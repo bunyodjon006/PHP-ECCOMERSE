@@ -39,7 +39,7 @@ class User
         if (is_array($check)) {
             $this->error .= "That email is already in use";
         }
-       
+
 
         $data['url_addrees'] = $this->get_random_string_max(60);
         $arr = [];
@@ -115,6 +115,15 @@ class User
         $_SESSION['error'] = $this->error;
     }
 
+    public function logout(){
+        if(isset($_SESSION['user_url'])){
+            unset($_SESSION['user_url']);
+        }
+        header("Location: " . ROOT . "home");
+        die;
+    
+       
+    }
     public function get_user($url) {}
 
     private function get_random_string_max($length): string
@@ -128,14 +137,20 @@ class User
         }
         return $text;
     }
-    // function check_login()
-    // {
-    //     if (isset($_SESSION['user_url'])) {
-    //         $arr['url'] = $_SESSION['user_url'];
-    //         $query = "SELECT * FROM user WHERE url_addrees = :url_addrees LIMIT 1";
-    //         $db = Database::getInstance();
-    //         $result = $db->read($query, $arr);
-    //     } 
-    //     return false;
-    // }
+    function check_login()
+    {
+        if (isset($_SESSION['user_url'])) {
+            $arr['url'] = $_SESSION['user_url'];
+            $query = "SELECT * FROM user WHERE url_addrees = :url  LIMIT 1";
+            // agar hato chiqsa url url_addreesga  o'zgartiraman!
+          
+            $db = Database::getInstance();
+            $result = $db->read($query, $arr);
+            if (is_array($result)) {
+                return $result[0];
+            }
+        }
+        return false;
+    }
+    
 }

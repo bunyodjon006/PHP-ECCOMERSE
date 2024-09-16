@@ -1,6 +1,6 @@
 <?php
 
-class Home extends Controller
+class Profile extends Controller
 {
     public function index()
     {
@@ -9,11 +9,8 @@ class Home extends Controller
 
         if (is_array($user_data)) {
         $data['user_data'] = $user_data;
-    
         }
-  
-
-        $data['page_title'] = "Home1";
-        $this->view("index", $data);
+        $data['page_title'] = "Profile";
+        $this->view("profile", $data);
     }
 }

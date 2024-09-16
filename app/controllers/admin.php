@@ -1,6 +1,6 @@
 <?php
 
-class Home extends Controller
+class Admin extends Controller
 {
     public function index()
     {
@@ -11,9 +11,8 @@ class Home extends Controller
         $data['user_data'] = $user_data;
     
         }
-  
 
-        $data['page_title'] = "Home1";
-        $this->view("index", $data);
+        $data['page_title'] = "Admin";
+        $this->view("admin/index", $data);
     }
 }
